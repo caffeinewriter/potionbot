@@ -1,0 +1,24 @@
+# From https://gist.github.com/eksperimental/6a43b9a0ab8d718f5886e7025062fcbd
+# -------------------------------------------------------------------------------
+
+# EditorConfig is awesome: http://EditorConfig.org
+
+# .editorconfig for Elixir projects
+# https://git.io/elixir-editorconfig
+
+# top-most EditorConfig file
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.{md, markdown, eex}]
+trim_trailing_whitespace = false
+
+[Makefile]
+indent_style = tab
