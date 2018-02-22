@@ -22,3 +22,5 @@ erl_crash.dump
 # Ignore package tarball (built via "mix hex.build").
 potionbot-*.tar
 
+# This is to related to a VSCode package
+.elixir_ls
