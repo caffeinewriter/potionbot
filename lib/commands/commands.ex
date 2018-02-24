@@ -7,4 +7,9 @@ defmodule PotionBot.Commands do
   Cogs.def ping do
     Cogs.say("pong!")
   end
+
+  Cogs.def setprefix(new_prefix) do
+    Cogs.set_prefix(new_prefix)
+    Cogs.say("Prefix now set to " <> new_prefix)
+  end
 end
