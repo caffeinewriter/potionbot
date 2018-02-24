@@ -17,8 +17,8 @@ defmodule PotionBot do
   end
 
   defp bootstrap_bot(discord_key) do
-      run = Client.start(discord_key)
-      use Commands
-      run
+    run = Client.start(discord_key)
+    use Commands
+    run
   end
 end
