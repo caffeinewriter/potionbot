@@ -1,8 +1,12 @@
 defmodule PotionbotTest do
   use ExUnit.Case
-  doctest Potionbot
+  doctest PotionBot
 
-  test "greets the world" do
-    assert Potionbot.hello() == :world
+  test "has ping command" do
+    assert Enum.member?(PotionBot.Commands.__info__(:functions), {:ping, 1})
+  end
+
+  test "has setprefix command" do
+    assert Enum.member?(PotionBot.Commands.__info__(:functions), {:setprefix, 2})
   end
 end

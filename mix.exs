@@ -22,7 +22,8 @@ defmodule PotionBot.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:alchemy, "~> 0.6.1", hex: :discord_alchemy}
+      {:alchemy, "~> 0.6.1", hex: :discord_alchemy},
+      {:mock, "~> 0.3.0", only: :test}
     ]
   end
 end
