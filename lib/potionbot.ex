@@ -17,8 +17,16 @@ defmodule PotionBot do
   end
 
   defp bootstrap_bot(discord_key) do
-    run = Client.start(discord_key)
-    use Commands
-    run
+    try do
+      run = Client.start(discord_key)
+      use Commands
+      run
+    catch
+      error -> (
+        IO.puts "An error occurred when the bot was being set up to load."
+        IO.puts("This could be due to your token being invalid or Alchemy being bugged in some way.")
+        raise error
+      )
+    end
   end
 end
