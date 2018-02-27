@@ -1,5 +1,5 @@
 defmodule PotionBot.ModuleManager do
-  import PotionBot.Helpers.CommandModules, only: [is_module_loaded: 1]
+  import PotionBot.Helpers.CommandModules, only: [module_loaded?: 1]
 
   @doc """
   Reloads a module based on a "Module Name" and a "Prefix".
@@ -22,7 +22,7 @@ defmodule PotionBot.ModuleManager do
   """
   @spec load_module(String.t(), String.t()) :: {:ok, String.t()} | {:warning, String.t()}
   def load_module(module_name, prefix \\ "PotionBot.Commands") do
-    if is_module_loaded(module_name) do
+    if module_loaded?(module_name) do
       {:warning, "#{module_name} is already loaded. Try the reload command."}
     else
       mdl_atom = String.to_atom("Elixir.#{prefix}.#{module_name}")
@@ -43,7 +43,7 @@ defmodule PotionBot.ModuleManager do
   """
   @spec unload_module(String.t(), String.t()) :: {:ok, String.t()} | {:warning, String.t()}
   def unload_module(module_name, prefix \\ "PotionBot.Commands") do
-    unless is_module_loaded(module_name) do
+    unless module_loaded?(module_name) do
       {:warning, "#{module_name} is not loaded. First load it."}
     else
       Alchemy.Cogs.unload(Module.concat(prefix, module_name))
