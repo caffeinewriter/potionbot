@@ -12,7 +12,7 @@ defmodule PotionBot.MixProject do
       # Docs
       name: "PotionBot",
       source_url: "https://github.com/caffeinewriter/potionbot",
-      homepage_url: "https://hexdocs.pm/potionbot/",
+      homepage_url: "https://hexdocs.pm/potionbot/"
     ]
   end
 

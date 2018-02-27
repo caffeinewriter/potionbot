@@ -5,27 +5,26 @@ defmodule PotionBot.Tests.ModuleManager do
   ExUnit is configured with `seed:0` because the order of module loading matters for this module's operations.
   """
   alias PotionBot.ModuleManager
-  import PotionBot.Helpers.CommandModules, only: [is_module_loaded: 1]
+  import PotionBot.Helpers.CommandModules, only: [module_loaded?: 1]
 
   # Pre-configure ExUnit to respect test order
   use ExUnit.Case
-  ExUnit.configure seed:0
   doctest PotionBot
 
   test "Tests if the ModuleManager correctly loads a module" do
     assert {:ok, _} = ModuleManager.load_module("TestModule")
-    assert is_module_loaded("TestModule")
+    assert module_loaded?("TestModule")
   end
 
   test "Tests if the ModuleManager correctly unloads a module" do
     assert {:ok, _} = ModuleManager.unload_module("TestModule")
-    assert !(is_module_loaded("TestModule"))
+    refute module_loaded?("TestModule")
   end
 
   test "Tests if the ModuleManager correctly reloads a module" do
     ModuleManager.load_module("TestModule")
-    assert is_module_loaded("TestModule")
-    assert  {:ok, _} =ModuleManager.reload_module("TestModule")
+    assert module_loaded?("TestModule")
+    assert {:ok, _} = ModuleManager.reload_module("TestModule")
   end
 end
 
