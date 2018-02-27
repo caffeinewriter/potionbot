@@ -1,0 +1,11 @@
+17:31:01.480 [error] Task #PID<0.237.0> started from #PID<0.229.0> terminating
+** (Protocol.UndefinedError) protocol String.Chars not implemented for %Alchemy.Message{attachments: [], author: %Alchemy.User{avatar: "e0a682bbbea0440fd5c41043a9adb9ab", bot: false, discriminator: "7122", email: :hidden, id: "392698684858433537", username: "self-induced deploration cycle", verified: :hidden}, channel_id: "416976432707665921", content: "!disable_module Ping", edited_timestamp: nil, embeds: [], id: "417418230211149824", mention_everyone: false, mention_roles: [], mentions: [], nonce: "417418229661564928", pinned: false, reactions: nil, timestamp: "2018-02-25T20:31:01.338000+00:00", tts: false, webhook_id: nil}. This protocol is implemented for: Alchemy.Guild.Emoji, Alchemy.User, Atom, BitString, Date, DateTime, Float, Integer, List, NaiveDateTime, Time, URI, Version, Version.Requirement
+    (elixir) lib/string/chars.ex:3: String.Chars.impl_for!/1
+    (elixir) lib/string/chars.ex:22: String.Chars.to_string/1
+    (potionbot) lib/module_selector.ex:31: PotionBot.ModuleSelector.is_module_loaded/1
+    (potionbot) lib/module_selector.ex:11: PotionBot.ModuleSelector.unload_module/2
+    (potionbot) lib/commands/module_handler.ex:13: PotionBot.Commands.ModuleHandler.disable_module/1
+    (elixir) lib/task/supervised.ex:88: Task.Supervised.do_apply/2
+    (stdlib) proc_lib.erl:247: :proc_lib.init_p_do_apply/3
+Function: &PotionBot.Commands.ModuleHandler.disable_module/1
+    Args: [%Alchemy.Message{attachments: [], author: %Alchemy.User{avatar: "e0a682bbbea0440fd5c41043a9adb9ab", bot: false, discriminator: "7122", email: :hidden, id: "392698684858433537", username: "self-induced deploration cycle", verified: :hidden}, channel_id: "416976432707665921", content: "!disable_module Ping", edited_timestamp: nil, embeds: [], id: "417418230211149824", mention_everyone: false, mention_roles: [], mentions: [], nonce: "417418229661564928", pinned: false, reactions: nil, timestamp: "2018-02-25T20:31:01.338000+00:00", tts: false, webhook_id: nil}]
