@@ -9,7 +9,6 @@ defmodule PotionBot.Tests.ModuleManager do
 
   # Pre-configure ExUnit to respect test order
   use ExUnit.Case
-  ExUnit.configure seed:0
   doctest PotionBot
 
   test "Tests if the ModuleManager correctly loads a module" do
@@ -19,13 +18,13 @@ defmodule PotionBot.Tests.ModuleManager do
 
   test "Tests if the ModuleManager correctly unloads a module" do
     assert {:ok, _} = ModuleManager.unload_module("TestModule")
-    assert !(is_module_loaded("TestModule"))
+    assert !is_module_loaded("TestModule")
   end
 
   test "Tests if the ModuleManager correctly reloads a module" do
     ModuleManager.load_module("TestModule")
     assert is_module_loaded("TestModule")
-    assert  {:ok, _} =ModuleManager.reload_module("TestModule")
+    assert {:ok, _} = ModuleManager.reload_module("TestModule")
   end
 end
 
